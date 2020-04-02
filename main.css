@@ -3,12 +3,15 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg'); */
+     background: url('https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg'); 
+    
     color: #333;
     font-family: 'calibri', sans-serif;
     font-weight: 400;
     text-transform: capitalize;
 }
+
+
 
 .container{
 

@@ -1,2 +1,6 @@
 ******Things to do**********
-1) update array with background image to each item to change background based on quote author
+1) update array with background image to each item to change background based on quote author - finished: 4-1-20
+2) Use jquery to transition background image animation
+3) Add more quotes
+4) Improve page styling
+5) Enter parameters to modify qoutes generated based on user specs
