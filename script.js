@@ -58,37 +58,24 @@ autoBtn.addEventListener('click', autoDisplay);
 function quoteAnimation () {
     $('.container').fadeOut(2000).fadeIn(2000);
     displayQuote();
-    // authorImg ();
     
-    
-//     if (quoteAuthor.innerText === 'Marcus Aurelius')
-//     {
-//     bodyBc.style.background = "url(images/ruins.jpg) no-repeat"; 
-//    }
-//     else if (quoteAuthor.innerText === 'Ho Chi Minh') {
-//         bodyBc.style.background = 'url(images/ho-chi-minh.jpg) no-repeat';
-//     }
-//     else if (quoteAuthor.innerText === 'Friedrich Nietzsche') {
-//         bodyBc.style.background = 'url(images/spooky.jpg) no-repeat';
-//     }
-        
-    // $('#quote').fadeOut(3000);
-    // $('#quoteAuthor').fadeOut(3000);
-    //    setTimeout(displayQuote(),
-    //     5000);     
 }
 
+/*** function scrolls through quotes only */
 function autoDisplay () {
     for (i=0; i <= quotes.length; i++){
     let number = Math.floor(Math.random()*quotes.length);
-    // setTimeout( function (){
+    
     quoteAuthor.innerHTML = quotes[number].name;
     quote.innerHTML = quotes[number].quote;
     
-    // },1000);
+    
  }
 }
 
+ /* Random quote function:
+ generates quote from quote object and displays author background image
+  */
 function displayQuote () {
     let number = Math.floor(Math.random()*quotes.length);
     setTimeout( function (){
@@ -99,37 +86,52 @@ function displayQuote () {
    
 }
 
-function authorImg () {
-    if (quoteAuthor.innerText === 'Marcus Aurelius')
-    {
-    bodyBc.style.background = "url(images/ruins.jpg) no-repeat"; 
-   }
-    else if (quoteAuthor.innerText === 'Ho Chi Minh') {
-        bodyBc.style.background = 'url(images/ho-chi-minh.jpg) no-repeat';
+function renderTime(){
+    var myDate = new Date();
+    var year = myDate.getFullYear();
+    if(year < 1000) {
+        year +=1900
     }
-    else if (quoteAuthor.innerText === 'Friedrich Nietzsche') {
-        bodyBc.style.background = 'url(images/spooky.jpg) no-repeat';
-    }
+    var day = myDate.getDay();
+    var month =myDate.getMonth();
+    var daym = myDate.getDate();
+    var dayarray = new Array("Sunday","Monday","Tuesday","Wednsday","Thursday","Friday","Saturday");
+    var monthArray = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+    //Date end
+
+    //Time
+    var currentTime = new Date();
+    var h = currentTime.getHours();
+    var m = currentTime.getMinutes();
+    var s = currentTime.getSeconds();
+        if(h == 24) {
+            h = 0;
+        } else if(h > 12) {
+            h = h - 0;
+        }
+
+        if(h < 10) {
+            h = "0" + h;
+        }
+
+        if(m < 10) {
+            m = "0" + m;
+        }
+
+        if(s < 10) {
+            s = "0" + s;
+        }
+
+        var myClock = document.getElementById("clockDisplay");
+        myClock.textContent = "" +dayarray[day]+ "" +daym+ " " +monthArray[month]+ " " +year+ " | " +h+  ":" +m+ ":" +s;
+        myClock.innerText = "" +dayarray[day]+ "" +daym+ " " +monthArray[month]+ " " +year+ " | " +h+  ":" +m+ ":" +s;
+
+        setTimeout("renderTime()", 1000);
 }
+renderTime();
 
 
 
 
 
 
-// $( document ).ready(function() {
-//     $('#quoteBtn').click(function(){
-//     $('h2').fadeIn(3000);
- 
-//     });
-// });
-
-
-// $( document ).ready(function quoteAnimation () {
-    
-//     $('#quoteBtn').click(function(){
-//     $('#quote').fadeOut(3000).displayQuote().fadeIn(3000);
-//     $('#quoteAuthor').fadeOut(3000).displayQuote().fadeIn(3000);
- 
-//     });
-// });
