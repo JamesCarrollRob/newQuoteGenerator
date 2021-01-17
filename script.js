@@ -2,15 +2,15 @@
 
 const quotes = [
     {
-        name: 'Marcus Aurelius',
-        quote: 'You have power over your mind - not outside events. Realize this, and you will find strength.',
-        image: "url(images/marcus.jpg)"
+    name: 'Marcus Aurelius',
+    quote: 'You have power over your mind - not outside events. Realize this, and you will find strength.',
+    image: "url(images/marcus.jpg)"
     },
 
     {
-        name: 'Plato',
-        quote: 'If you do not take an interest in the affairs of your government, then you are doomed to live under the rule of fools.',
-        image: "url(images/ruins.jpg)"
+    name: 'Plato',
+    quote: 'If you do not take an interest in the affairs of your government, then you are doomed to live under the rule of fools.',
+    image: "url(images/ruins.jpg)"
     },
 
     {
